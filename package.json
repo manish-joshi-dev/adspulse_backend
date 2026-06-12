@@ -1,0 +1,46 @@
+{
+  "name": "adspulse-server",
+  "version": "1.0.0",
+  "description": "Express API for AdsPulse Google Ads Diagnostic Engine.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "node --check app.js && node --check server.js",
+    "seed": "node src/utils/seedDemo.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "bullmq": "^5.78.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "csv-parse": "^5.6.0",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.1.0",
+    "ioredis": "^5.11.1",
+    "mongoose": "^8.15.1",
+    "morgan": "^1.10.0",
+    "multer": "^2.0.1",
+    "sanitize-html": "^2.17.5",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "bcryptjs": "^3.0.3",
+    "jest": "^30.4.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb-memory-server": "^10.4.3",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.2.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
