@@ -6,12 +6,21 @@ import { sanitizeInput } from "./src/middleware/validation.middleware.js";
 import { uploadRateLimit, analysisRateLimit, authRateLimit } from "./src/middleware/rateLimit.middleware.js";
 import { errorHandler } from "./src/middleware/errorHandler.middleware.js";
 import apiRoutes from "./src/routes/index.js"; // Import the consolidated router
+import cors from cors;
 
 const app = express();
 
 applySecurity(app);
 app.use(express.json({ limit: "2mb" }));
 app.use(sanitizeInput);
+app.use(cors({
+  origin: 'https://adspulse-frontend.vercel.app/', // your exact Vercel URL
+  credentials: true,                    // needed if you're sending cookies/auth headers
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+
 
 app.use(morgan(config.nodeEnv === "production" ? "combined" : "dev"));
 
