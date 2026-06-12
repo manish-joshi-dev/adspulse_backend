@@ -6,7 +6,7 @@ import { sanitizeInput } from "./src/middleware/validation.middleware.js";
 import { uploadRateLimit, analysisRateLimit, authRateLimit } from "./src/middleware/rateLimit.middleware.js";
 import { errorHandler } from "./src/middleware/errorHandler.middleware.js";
 import apiRoutes from "./src/routes/index.js"; // Import the consolidated router
-import cors from cors;
+import cors from "cors";
 
 const app = express();
 
